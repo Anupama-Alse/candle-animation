@@ -1,38 +1,101 @@
-.App {
-  text-align: center;
-}
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+html,body{
+  height:100%;
 }
+*,*::before,*::after{
+  box-sizing:border-box;
+}
+.candle{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+}
+.cflame{
+   width:15px;
+   height:30px;
+   /*border-radius: top-left-up top-right-up bottom-right-down bottom-left-down /
+               top-left-left top-right-right bottom-right-right bottom-left-left;*/
+   border-radius: 8px 8px 8px 8px / 20px 20px 8px 8px;
+   box-shadow: 0px 0px 20px 0px  #ffad00;;
+   animation: flame-twirl 15s ease infinite, glow 2s ease infinite;
+  background-color:#ffad00;
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+}
+.cwax{
+  width: 40px;
+height: 110px;
+background: #ffffff;
+border-radius: 6px;
+box-shadow: inset -15px 0px 0px -10px  #8ddeed;
+  
+}
+.cwick{
+  height: 10px;
+width: 3px;
+  background-color:#ad87a9;
+}
+.cstand{
+  width: 100px;
+height: 8px;
+border-radius: 3px;
+  background:#1c233e;
+}
+body{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  background:darken(#2d3d50,10%);
+}
+.wrap{
+  position:absolute;
+  top:50%;
+  left:50%;
+  width:400px;
+  height:400px;
+  margin-top:-200px;
+  margin-left:-200px;
+  border-radius:4px;
+  box-shadow:4px 8px 16px 0 #00000010;
+  overflow:hidden;
+  background:#2d3d50;
+
+
+}
+.center{
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
+}
+@keyframes flame-twirl {
+  0%,
+  22%,
+  49%,
+  62%,
+  81%,
+  100% {
+  border-radius: 2px 14px 8px 8px / 20px 20px 8px 8px;
   }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+  14%,
+  32%,
+  56%,
+  70%,
+  89% {
+  border-radius: 14px 2px 8px 8px / 20px 20px 8px 8px;
   }
-  to {
-    transform: rotate(360deg);
   }
-}
+  @keyframes glow {
+    0%,
+    30%,
+    60%,
+    80%,
+    100% {
+    box-shadow: 0 0 20px 0 #ffad00;
+    }
+    20%,
+    50%,
+    70% {
+    box-shadow: 0 0 22px 0 #ffad00;
+    }
+    }
+
